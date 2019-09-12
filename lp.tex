@@ -41,9 +41,9 @@ To do this, I use the technique developed in \cite{petrunin:HarmFun}.
 Let me illustrate the idea on a simpler problem.
 
 Let $M$ be a $2$-dimensional non-negatively curved Riemannian manifold and $\gamma_\tau\:[0,1]\to M$ be a continuous family of unit-speed geodesics such that
-$$|\gamma_{\tau_0}(t_0)\,\gamma_{\tau_1}(t_1)|\ge|t_1-t_0|.
+$$|\gamma_{\tau_0}(t_0)-\gamma_{\tau_1}(t_1)|\ge|t_1-t_0|.
 \eqlbl{equi-dist}$$
-for any $t_0,t_1,\tau_0,\tau_1$.
+for any $t_0,t_1,\tau_0,\tau_1$ (here $|x-y|$ denotes the distance between points $x$ and $y$ in a metric space). 
 Set $\ell(t)$ to be the total length of curve $\sigma_t\:\tau\mapsto\gamma_\tau(t)$.
 Then $\ell(t)$ is a concave function --- that is easy to prove.
 
@@ -100,7 +100,7 @@ More on the history of the subject can be found in \cite{villani}.
 
 For a metric-measure space $X$, 
 I will denote 
-by $|x y|$ the distance between points $x,y\in X$
+by $|x-y|$ the distance between points $x,y\in X$
 and by $\vol E$ the distinguished measure of Borel subset $E\i X$ (I will call it \emph{volume}).
 Let us denote by $\Ptwo X$ the set of all probability measures with compact support in $X$ equipped with Wasserstein distance of order 2, see \cite[6.1]{villani}.
 
@@ -201,7 +201,7 @@ $$\tfrac{d^+}{d t}u_t(x)|_{t=0}\ae d_x u(\nabla_x f)\ae\<\nabla_x u,\nabla_x f\>
 Further,
 $$\int\limits_A u_t{\cdot}\vol=\int\limits_A u{\cdot}(F_t\#\vol),$$ 
 where $\#$ stands for push-forward. 
-Since $|F_t(x)F_t(y)|\le e^{\lambda t}{\cdot}|x y|$  
+Since $|F_t(x)-F_t(y)|\le e^{\lambda t}{\cdot}|x-y|$  
 (see \cite[2.1.4(i)]{petrunin:survey}), 
 for any $x,y\in A$ we have
 $$F_t\#\vol\ge \exp(-m{\cdot}\lambda{\cdot} t){\cdot}\vol.$$
@@ -252,8 +252,8 @@ A one parameter family of functions $f_t\:A\to \RR$, $t\in \II$ will be called \
 and $f_t$ is $\lambda(t)$-concave for each $t\in \II$.
 
 A locally Lipschitz curve $\alpha\:\II\to A$ will be called an $f_t$-gradient curve
-if for any $t\in \II$ and any $p\in A$ 
-\[|p\alpha(t+\eps)|\le |p\alpha(t)|-d_{\alpha(t)}f_t(\dir {\alpha(t)}p)\cdot\eps+o(\eps),\]
+if for any $t\in \II$ and minimizing geodesic $[\alpha(t)p]$ 
+\[|p-\alpha(t+\eps)|\le |p-\alpha(t)|-d_{\alpha(t)}f_t(\dir {\alpha(t)}p)\cdot\eps+o(\eps),\]
 for $\eps>0$.
 Note that if the right derivative $\alpha^+(t)$ is defined, then the last inequality implies that
 \[\langle\alpha^+(t),v\rangle\ge d_{\alpha(t)}f(v)\]
@@ -276,7 +276,7 @@ $f_t\:A\to \RR$, $t\in \II$ be $\lambda(t)$-concave family.
 Then for any $x\in A$ and $t_0\in \II$ there exists an $f_t$-gradient curve $\alpha$ which is defined in a neighborhood of $t_0$ and such that $\alpha(t_0)=x$.
 
 Moreover, if $\alpha,\beta\:\II\to A$ are $f_t$-gradient then for any $t_0,t_1\in\II$, $t_0\le t_1$,
-$$|\alpha(t_1)\beta(t_1)|\le L{\cdot}|\alpha(t_0)\beta(t_0)|,$$
+$$|\alpha(t_1)-\beta(t_1)|\le L{\cdot}|\alpha(t_0)-\beta(t_0)|,$$
 where $L=\exp\l(\int_{t_0}^{t_1}\lambda(t){\cdot}\,d t\r).$
 \end{thm}
 
@@ -327,7 +327,7 @@ Applying it to the characteristic function of $E$ we get the result.
 
 Let $A\in\CBB m 0$.
 For a function $f\:A\to \RR\cup\{+\infty\}$, let us define its Hamilton--Jacobi shift\footnote{There is a lot of similarity between the Hamilton--Jacobi shift of a function and an equidistant for a hypersurface.} $\HJ_{t}f\:A\to\RR$ for time $t>0$ as follows
-$$(\HJ_{t}f)(x)\df\inf_{y\in A} \l\{f(y)+\tfrac1{2\cdot t}{\cdot}|x y|^2\r\}.$$
+$$(\HJ_{t}f)(x)\df\inf_{y\in A} \l\{f(y)+\tfrac1{2\cdot t}{\cdot}|x-y|^2\r\}.$$
 We say that $\HJ_{t}f$ is defined if the above infimum is $>-\infty$ everywhere in $A$.
 Note that
 $$\HJ_{t_0+t_1}f=\HJ_{t_1}\HJ_{t_0}f,
@@ -364,7 +364,7 @@ If for some $t_0\in(0,1)$, $\alpha(t_0)=\gamma(t_0)$, then $\alpha(t)=\gamma(t)$
 \end{wrapfigure}
 
 \parit{Proof.}
-Set $\ell=\ell(t)=|\alpha(t)\gamma(t)|$; it is locally Lipschitz function defined on $(0,1)$.
+Set $\ell=\ell(t)=|\alpha(t)-\gamma(t)|$; it is locally Lipschitz function defined on $(0,1)$.
 We have to show that if $\ell(t_0)=0$ for some $t_0$ then $\ell(t)=0$ for all $t$.
 
 According to \ref{prop-def}, 
@@ -377,7 +377,7 @@ Since $\alpha$ is locally Lipschitz, for almost all $t$, $\alpha^+(t)$ and $\alp
 \footnote{That is, $|\alpha^+(t)|=|\alpha^-(t)|$ and $\mangle(\alpha^+(t),\alpha^-(t))=\pi$}
 to each other.
 
-Fix such $t$ and set $x=\gamma(0)$, $z=\gamma(t)$, $y=\gamma(1)$, $p=\alpha(t)$, so $\ell(t)=|p z|$.
+Fix such $t$ and set $x=\gamma(0)$, $z=\gamma(t)$, $y=\gamma(1)$, $p=\alpha(t)$, so $\ell(t)=|p-z|$.
 Note that function
 $$f_t+\tfrac1{2\cdot(1-t)}{\cdot}\dist^2_y
 \eqlbl{ding203}$$
@@ -436,13 +436,13 @@ $$\int\limits_0^a \l(\tfrac1m{\cdot} h^2{\cdot}u-h{\cdot} u'\r){\cdot}\,d t\ge0.
 \parit{Proof.}
 Since $h$ is defined a.e., all $\T_{\gamma(t)}$ for $t\in(0,a)$ are isometric to Euclidean $m$-space.
 From \ref{ding202},
-$$f_{t_1}(x)=\inf_{y\in A}\l\{f_{t_0}(y)+\frac{|x y|^2}{2{\cdot}(t_1-t_0)}\r\}.$$
+$$f_{t_1}(x)=\inf_{y\in A}\l\{f_{t_0}(y)+\frac{|x-y|^2}{2{\cdot}(t_1-t_0)}\r\}.$$
 Thus, for a parallel transportation $\tau\:\T_{\gamma(t_0)}\to \T_{\gamma(t_1)}$ along $\gamma$,
 we have 
 $$[\Hess_{\gamma(t_1)}f_{t_1}](y,y)
 \le
 [\Hess_{\gamma(t_0)}f_{t_0}](x,x)
-+\frac{|\tau (x)\,y|^2}{t_1-t_0}$$
++\frac{|\tau (x)-y|^2}{t_1-t_0}$$
 for any $x\in\T_{\gamma(t_0)}$ and $y\in\T_{\gamma(t_1)}$.
 It remains to take the trace of the last formula with $y=c{\cdot}\tau(x)$ for appropriate $c>0$.
 \qeds
@@ -479,12 +479,13 @@ If $\Gamma=\supp\Pii$ and $e_t\:\Gamma\to A$ is evaluation map
 $e_t\:\gamma\mapsto\gamma(t)$ then $\mu_t=e_t\#\Pii$.
 
 The measure $\Pii$ is called the  \emph{dynamical optimal coupling} for $\mu_t$ and the measure $\pi=(e_0,e_1)\#\Pii$ is the corresponding \emph{optimal transference plan}.
-The space $\Gamma$ will be considered further equipped with the metric $|\gamma\,\gamma'|=\max_{t\in[0,1]}|\gamma(t)\gamma'(t)|$.
+The space $\Gamma$ will be considered further equipped with the metric
+\[|\gamma-\gamma'|=\max_{t\in[0,1]}|\gamma(t)-\gamma'(t)|.\]
 
 \parit{First we present $\mu_t$ as the push-forward  for gradient flows of two opposite families of functions.}
 According to \cite[5.10]{villani}, there are optimal price functions
  $\phi,\psi\:A\to\RR$ such that
-$$\phi(y)-\psi(x)\le\tfrac12{\cdot}|x y|^2$$
+$$\phi(y)-\psi(x)\le\tfrac12{\cdot}|x-y|^2$$
 for any $x,y\in A$ 
 and equality holds for any $(x,y)\in\supp\pi$.
 We can assume that $\psi(x)=+\infty$ for $x\not\in\supp\mu_0$ and $\phi(y)=-\infty$ for $y\not\in\supp\mu_1$.
