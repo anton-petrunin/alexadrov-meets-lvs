@@ -115,9 +115,9 @@ $\mu^{r}$ coincides with $\mu$ outside a Borel subset of volume zero and
 Define
 $$U_m\mu
 \df
-\int\limits_X\rho^{1-\frac1m}{\cdot}\, d\vol
+\int\limits_X\rho^{1-\frac1m}{\cdot}\vol
 =
-\int\limits_X\frac1{\sqrt[m]{\rho}}{\cdot}\,d\mu^r.$$
+\int\limits_X\frac1{\sqrt[m]{\rho}}{\cdot}\mu^r.$$
 
 Then $X\in \CD m0$ if the functional $U_m$ is concave on  $\Ptwo X$;
 that is, for any two measures $\mu_0,\mu_1\in \Ptwo X$,
@@ -172,9 +172,9 @@ for $\o$-almost all $n$ (once the left-hand  side is defined).
 Here are some facts from \cite{petrunin:HarmFun}.
 
 Given a function $f\:A\to\RR$, define its \emph{Laplacian} $\Lap f$ to be a Radon sign-measure which satisfies the following identity
-$$\int\limits_Au{\cdot}\,d\Lap f
+$$\int\limits_Au{\cdot}\Lap f
 =
--\int\limits_A\<\nabla u,\nabla f\>{\cdot}\,d\vol$$
+-\int\limits_A\<\nabla u,\nabla f\>{\cdot}\vol$$
 for any Lipschitz function $u\:A\to\RR$.
 
 \begin{thm}{Claim}\label{lap}
@@ -199,28 +199,28 @@ Moreover
 $$\tfrac{d^+}{d t}u_t(x)|_{t=0}\ae d_x u(\nabla_x f)\ae\<\nabla_x u,\nabla_x f\>.$$
 
 Further,
-$$\int\limits_A u_t{\cdot} \,d\vol=\int\limits_A u{\cdot} \,d(F_t\#\vol),$$ 
+$$\int\limits_A u_t{\cdot}\vol=\int\limits_A u{\cdot}(F_t\#\vol),$$ 
 where $\#$ stands for push-forward. 
 Since $|F_t(x)F_t(y)|\le e^{\lambda t}{\cdot}|x y|$  
 (see \cite[2.1.4(i)]{petrunin:survey}), 
 for any $x,y\in A$ we have
 $$F_t\#\vol\ge \exp(-m{\cdot}\lambda{\cdot} t){\cdot}\vol.$$
 Therefore, for any non-negative Lipschitz function $u\:A\to\RR$,
-$$\int\limits_A u_t{\cdot}\,d\vol
+$$\int\limits_A u_t{\cdot}\vol
 =
-\int\limits_A u{\cdot}\,d (F_t\#\vol)
+\int\limits_A u{\cdot} (F_t\#\vol)
 \ge
-\exp(-m{\cdot}\lambda{\cdot} t)\int\limits_A u{\cdot}\,d\vol.$$
+\exp(-m{\cdot}\lambda{\cdot} t)\cdot\int\limits_A u{\cdot}\vol.$$
 Therefore
-$$\int\limits_A\<\nabla u,\nabla f\>{\cdot}\,d\vol 
+$$\int\limits_A\<\nabla u,\nabla f\>{\cdot}\vol 
 =
-\l.\tfrac{d^+}{d t}\int\limits_A u_t{\cdot}\,d\vol\r|_{t=0}
+\l.\tfrac{d^+}{d t}\int\limits_A u_t{\cdot}\vol\r|_{t=0}
 \ge
--m{\cdot}\lambda{\cdot}\int\limits_A u{\cdot}\,d\vol.$$
+-m{\cdot}\lambda{\cdot}\int\limits_A u{\cdot}\vol.$$
 That is, there is a Radon measure $\chi$ on $A$, such that
-$$\int\limits_A u{\cdot}\,d\chi
+$$\int\limits_A u{\cdot}\chi
 =
-\int\limits_A\l[\<\nabla u,\nabla f\>+m{\cdot}\lambda{\cdot} u\r]{\cdot}\,d\vol.$$
+\int\limits_A\l[\<\nabla u,\nabla f\>+m{\cdot}\lambda{\cdot} u\r]{\cdot}\vol.$$
 Set $\Lap f=-\chi+m{\cdot}\lambda$, 
 it is a Radon sign-measure and $\chi=-\Lap f+m{\cdot}\lambda\ge 0$.
 
@@ -303,17 +303,17 @@ Let $u\:A\to\RR$ be a Lipschitz function with compact support.
 Set $u_t=u\circ F_{{t},{t_1}}$.
 Note that the function $(x,t)\mapsto u_t(x)$ is locally Lipschitz.
 Thus, the function 
-$$w_u\:t\mapsto \int\limits_A u_t{\cdot}\,d\vol$$ 
+$$w_u\:t\mapsto \int\limits_A u_t{\cdot}\vol$$ 
 is locally Lipschitz.
 Further
 $$w_u'(t)\ae
--\int\limits_A \<\nabla u_t,\nabla f_t\>{\cdot}\,d\vol
+-\int\limits_A \<\nabla u_t,\nabla f_t\>{\cdot}\vol
 =
-\int\limits_A u_t{\cdot}\, d\Lap f_t.$$
+\int\limits_A u_t{\cdot}\Lap f_t.$$
 Therefore 
 $$\bigl.w_u\bigr|_t^{t_1}
 =
-\int\limits_t^{t_1}d\under{t}\cdot\int\limits_A u_{\under{t}}{\cdot}\,d\Lap f_{\under{t}}.$$
+\int\limits_t^{t_1}d\under{t}\cdot\int\limits_A u_{\under{t}}{\cdot}\Lap f_{\under{t}}.$$
 The last formula extends to an arbitrary Borel function $u\:A\to\RR$ with bounded support.
 Applying it to the characteristic function of $E$ we get the result.
 \qeds
@@ -547,9 +547,9 @@ For $\gamma\in\Gamma$ set $r_t(\gamma)=\rho_t(\gamma(t))$.
 Then 
 $$\Theta(t)
 =
-\int\limits_A \rho_t^{-\frac1m}{\cdot}\,d\mu_t
+\int\limits_A \rho_t^{-\frac1m}{\cdot}\mu_t
 =
-\int\limits_\Gamma r_t^{-\frac1m}{\cdot}\,d\Pii.
+\int\limits_\Gamma r_t^{-\frac1m}{\cdot}\Pii.
 \eqlbl{ding206}$$
 In particular, $\Theta$ is locally Lipschitz in $(0,1)$.
 
@@ -557,7 +557,7 @@ In particular, $\Theta$ is locally Lipschitz in $(0,1)$.
 \parit{Next we show that the  measure $\Lap\phi_t$ is absolutely continuous on $e_t\Gamma$ and that \hbox{$r_t(\gamma(t))=\rho_t(\gamma(t)){\cdot}\Lap\phi_t$} in a weak sense.}
 From \ref{ding205}, $\vol_t^*=e^{w_t}{\cdot}\nu$ for some Borel function $w_t\:\Gamma\to\RR$.
 Thus
-$$\vol e_t E=\int\limits_{E}e^{w_t}{\cdot}\,d\nu$$ 
+$$\vol e_t E=\int\limits_{E}e^{w_t}{\cdot}\nu$$ 
 for any Borel subset $E\i \Gamma$.
 Moreover, for almost all $\gamma\in\Gamma$, we have that function $t\mapsto w_t(\gamma)$ is locally Lipschitz in $(0,1)$ (more precisely, $t\mapsto w_t(\gamma)$ coincides with a Lipschitz function outside of a set of zero measure).
 In particular $\frac{\partial w_t}{\partial t}$ is defined a.e. in $\Gamma\times (0,1)$
@@ -579,7 +579,7 @@ $$v(t)
 \df
 \vol e_t E
 =
-\int\limits_{E}e^{w_t}{\cdot}\,d\nu.$$ 
+\int\limits_{E}e^{w_t}{\cdot}\nu.$$ 
 From \ref{vol-lap},
 $$v'(t)
 \ae
@@ -596,15 +596,15 @@ are absolutely continuous with respect to volume.
 Therefore
 $$v'(t)
 \ae
-\int\limits_{e_t E}\Trace[\Hess\phi_t]{\cdot}\,d\vol.
+\int\limits_{e_t E}\Trace[\Hess\phi_t]{\cdot}\vol.
 $$
 
 For the one parameter family of functions $h_t(\gamma)=\Trace[\Hess_{\gamma(t)}\phi_t]$, we have
 $$\bigl.v\bigr|_{z_0}^t
 =
-\int\limits_E(e^{w_t}-1){\cdot}\,d\nu
+\int\limits_E(e^{w_t}-1){\cdot}\nu
 =
-\int\limits_{z_0}^t d\under{t}\cdot\int\limits_E h_\under{t}{\cdot}e^{w_\under{t}}{\cdot}\,d\nu$$
+\int\limits_{z_0}^t d\under{t}\cdot\int\limits_E h_\under{t}{\cdot}e^{w_\under{t}}{\cdot}\nu$$
 or any Borel set $E\i \Gamma$. 
 Equivalently, 
 $$\frac{\partial w_t}{\partial t}
@@ -627,9 +627,9 @@ Thus, for almost all $\gamma$ there is a non-negative Borel function $a\:\Gamma\
 Continue \ref{ding206},
 $$\Theta(t)
 =
-\int\limits_\Gamma r_t^{-\frac1m}{\cdot}\,d\Pii
+\int\limits_\Gamma r_t^{-\frac1m}{\cdot}\Pii
 =
-\int\limits_\Gamma{e^{\frac{w_t}m}}{\cdot}{\sqrt[m]{a}}{\cdot}\,d\Pii.
+\int\limits_\Gamma{e^{\frac{w_t}m}}{\cdot}{\sqrt[m]{a}}{\cdot}\Pii.
 $$
 That is, $\Theta$ is concave as an average of concave functions.
 Again, more precisely, $\Theta$ coincides with a concave function a.e., but since $\Theta$ is locally Lipschitz in $(0,1)$ we get that $\Theta$ is concave. \qeds
